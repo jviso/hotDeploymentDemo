@@ -9,7 +9,7 @@ import static org.junit.Assert.assertNotNull;
 public class ClientTest {
 
     @Test
-    public void clientCanBeCreatedWithClassLoaderAndServerAndDisplayDependencies() throws MalformedURLException {
+    public void clientCanBeCreatedWithClassLoaderAndDisplayDependencies() throws MalformedURLException {
         URL[] urls = new URL[]{new URL("file:///./serverDouble")};
         Client client = new Client(new URLClassLoader(urls), new ClientDisplay());
         assertNotNull(client);
