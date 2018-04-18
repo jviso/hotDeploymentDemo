@@ -1,4 +1,4 @@
-public class ClassLoaderDouble extends ClassLoader {
+public class FakeClassLoader extends ClassLoader {
 
     @Override
     public Class loadClass(String name, boolean test) throws ClassNotFoundException {

@@ -20,8 +20,8 @@ public class ClientTest {
 
     @Test
     public void whenClientNeedsMessageThenItRequestsMessageFromServer() throws Exception {
-        ClassLoaderDouble classLoaderDouble = new ClassLoaderDouble();
-        Client client = new Client(classLoaderDouble, new ClientDisplay());
+        FakeClassLoader fakeClassLoader = new FakeClassLoader();
+        Client client = new Client(fakeClassLoader, new ClientDisplay());
 
         client.run();
 
