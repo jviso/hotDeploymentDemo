@@ -1,4 +1,4 @@
-public class Display implements DisplayInterface {
+public class TextDisplay implements DisplayInterface {
 
     @Override
     public void printMessage(String message) {

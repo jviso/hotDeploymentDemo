@@ -1,4 +1,3 @@
-import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
@@ -8,14 +7,14 @@ public class ClientTest {
 
     @Test
     public void clientCanBeCreatedWithServerFactoryAndDisplayDependencies() {
-        Client client = new Client(new FakeServerFactory(), new Display());
+        Client client = new Client(new FakeServerFactory(), new TextDisplay());
 
         assertNotNull(client);
     }
 
     @Test
     public void whenClientNeedsMessageThenItRequestsMessageFromServer() {
-        Client client = new Client(new FakeServerFactory(), new Display());
+        Client client = new Client(new FakeServerFactory(), new TextDisplay());
 
         client.run();
 
@@ -25,12 +24,12 @@ public class ClientTest {
 
     @Test
     public void clientCanPrintMessage() {
-        ClientDisplaySpy clientDisplaySpy = new ClientDisplaySpy();
-        Client client = new Client(new FakeServerFactory(), clientDisplaySpy);
+        DisplaySpy displaySpy = new DisplaySpy();
+        Client client = new Client(new FakeServerFactory(), displaySpy);
 
         client.run();
 
-        boolean printMessageWasCalled = clientDisplaySpy.getPrintMessageWasCalled();
+        boolean printMessageWasCalled = displaySpy.getPrintMessageWasCalled();
         assertTrue(printMessageWasCalled);
     }
 }

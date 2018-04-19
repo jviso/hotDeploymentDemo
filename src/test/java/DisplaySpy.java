@@ -1,4 +1,4 @@
-public class ClientDisplaySpy implements DisplayInterface {
+public class DisplaySpy implements DisplayInterface {
 
     private boolean printMessageWasCalled;
 
