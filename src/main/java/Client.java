@@ -10,7 +10,7 @@ public class Client {
     }
 
     public void run() {
-        server = serverFactory.getCurrentServer();
+        loadNewServer();
         String message = server.getMessage();
         display.printMessage(message);
     }
