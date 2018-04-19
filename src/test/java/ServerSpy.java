@@ -1,4 +1,4 @@
-public class ServerSpy extends Server {
+public class ServerSpy implements ServerInterface {
 
     private static boolean messageWasCalled;
 
