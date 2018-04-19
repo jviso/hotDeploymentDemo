@@ -14,7 +14,7 @@ public class ClientTest {
     }
 
     @Test
-    public void whenClientNeedsMessageThenItRequestsMessageFromServer() throws Exception {
+    public void whenClientNeedsMessageThenItRequestsMessageFromServer() {
         Client client = new Client(new FakeServerFactory(), new Display());
 
         client.run();
@@ -24,7 +24,7 @@ public class ClientTest {
     }
 
     @Test
-    public void clientCanPrintMessage() throws Exception {
+    public void clientCanPrintMessage() {
         ClientDisplaySpy clientDisplaySpy = new ClientDisplaySpy();
         Client client = new Client(new FakeServerFactory(), clientDisplaySpy);
 
