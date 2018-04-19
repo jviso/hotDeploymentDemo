@@ -1,16 +1,16 @@
 public class Client {
 
-    private ClassLoader urlClassLoader;
+    private ServerFactoryInterface serverFactory;
     private DisplayInterface display;
     private ServerInterface server;
 
-    public Client(ClassLoader urlClassLoader, DisplayInterface display) {
-        this.urlClassLoader = urlClassLoader;
+    public Client(ServerFactoryInterface serverFactory, DisplayInterface display) {
+        this.serverFactory = serverFactory;
         this.display = display;
     }
 
-    public void run() throws Exception {
-        server = (ServerInterface) urlClassLoader.loadClass("Server").newInstance();
+    public void run() {
+        server = serverFactory.getCurrentServer();
         String message = server.getMessage();
         display.printMessage(message);
     }
