@@ -14,4 +14,8 @@ public class Client {
         String message = server.getMessage();
         display.printMessage(message);
     }
+
+    public void loadNewServer() {
+        server = serverFactory.getCurrentServer();
+    }
 }

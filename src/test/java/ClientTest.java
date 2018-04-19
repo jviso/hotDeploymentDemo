@@ -32,4 +32,16 @@ public class ClientTest {
         boolean printMessageWasCalled = displaySpy.getPrintMessageWasCalled();
         assertTrue(printMessageWasCalled);
     }
+
+    @Test
+    public void clientCanReloadServer() {
+        FakeServerFactory fakeServerFactory = new FakeServerFactory();
+        Client client = new Client(fakeServerFactory, new DisplaySpy());
+
+        client.loadNewServer();
+
+        boolean getCurrentServerWasCalled = fakeServerFactory.getCurrentServerWasCalled();
+        assertTrue(getCurrentServerWasCalled);
+    }
+
 }
