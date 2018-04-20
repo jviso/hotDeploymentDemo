@@ -10,8 +10,8 @@ public class ServerFactory implements ServerFactoryInterface {
     @Override
     public ServerInterface getCurrentServer() {
         try {
-            URL crapSack = new File("/Users/jvisovatti/IdeaProjects/hotDeploymentDemo/serverclass").toURI().toURL();
-            URL[] urls = new URL[]{crapSack};
+            URL urlFromFile = new File("/Users/jvisovatti/IdeaProjects/hotDeploymentDemo/serverclass").toURI().toURL();
+            URL[] urls = new URL[]{urlFromFile};
             ClassLoader urlClassLoader = new URLClassLoader(urls, getClass().getClassLoader());
             ServerInterface server = (ServerInterface) urlClassLoader.loadClass("server.Server").newInstance();
             return server;
