@@ -1,3 +1,5 @@
+import hotDeployment.ServerInterface;
+
 public class ServerSpy implements ServerInterface {
 
     private static boolean messageWasCalled;

@@ -1,3 +1,5 @@
+package hotDeployment;
+
 public class Client {
 
     private ServerFactoryInterface serverFactory;
@@ -16,6 +18,10 @@ public class Client {
     }
 
     public void loadNewServer() {
-        server = serverFactory.getCurrentServer();
+        try {
+            server = serverFactory.getCurrentServer();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

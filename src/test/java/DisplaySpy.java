@@ -1,3 +1,5 @@
+import hotDeployment.DisplayInterface;
+
 public class DisplaySpy implements DisplayInterface {
 
     private boolean printMessageWasCalled;

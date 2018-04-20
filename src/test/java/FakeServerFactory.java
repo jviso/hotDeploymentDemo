@@ -1,3 +1,6 @@
+import hotDeployment.ServerFactoryInterface;
+import hotDeployment.ServerInterface;
+
 public class FakeServerFactory implements ServerFactoryInterface {
 
     private boolean getCurrentServerWasCalled;

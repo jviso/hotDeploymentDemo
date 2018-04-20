@@ -1,6 +1,8 @@
+import hotDeployment.ServerFactory;
+import hotDeployment.ServerInterface;
 import org.junit.Test;
 
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
 public class ServerFactoryTest {
 
@@ -11,6 +13,16 @@ public class ServerFactoryTest {
         ServerInterface server = serverFactory.getCurrentServer();
 
         assertNotNull(server);
+    }
+
+    @Test
+    public void givenOneServerRequestCompletedWhenAnotherServerIsRequestedThenTheServerClassesAreNotEqual() {
+        ServerFactory serverFactory = new ServerFactory();
+
+        ServerInterface firstServer = serverFactory.getCurrentServer();
+        ServerInterface secondServer = serverFactory.getCurrentServer();
+
+        assertNotEquals(firstServer.getClass(), secondServer.getClass());
     }
 
 }

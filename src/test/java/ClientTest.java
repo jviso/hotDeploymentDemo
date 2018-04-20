@@ -1,3 +1,5 @@
+import hotDeployment.Client;
+import hotDeployment.TextDisplay;
 import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;

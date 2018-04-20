@@ -12,3 +12,11 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
+
+task(moveServerClass) {
+    doLast {
+        file('build/classes/java/main/server/Server.class').renameTo('serverclass/server/Server.class')
+    }
+}
+moveServerClass.mustRunAfter compileJava
+processResources.dependsOn moveServerClass
